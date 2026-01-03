@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+
+
+:root {
+  --navbar:249 115 22;
+  --navbar-hover: 234 88 12;  /* orange-600 */
+  --navbar-light: 255 247 237;/* orange-50 */
+  --accent: 194 65 12
+}
