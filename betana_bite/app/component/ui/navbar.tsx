@@ -62,11 +62,6 @@ export default function Navbar({
                                 {link.label}
                             </a>
                         ))}
-
-
-
-
-                        
                     
                         {user ? (
                             <div className="relative ml-2">
@@ -139,11 +134,6 @@ export default function Navbar({
                             )}
                         </motion.button>
                     </nav>
-
-
-
-
-
 
                   
                     <div className="md:hidden flex items-center gap-2">
