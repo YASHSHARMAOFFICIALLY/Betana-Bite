@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Navbar from "./component/ui/navbar";
 import Hero from "./component/ui/Hero";
