@@ -118,7 +118,15 @@ export default function Mission() {
   );
 }
 
-function MissionCard({ icon, title, desc, delay, bgGradient, accentColor }) {
+interface MissionCardProps {
+  icon: React.ReactNode; // or React.ElementType if passing a component
+  title: string;
+  desc: string;
+  delay: number;
+  bgGradient: string;
+  accentColor: 'green' | 'amber' | 'orange' | 'blue' | 'purple'; // Add the colors you use
+}
+function MissionCard({ icon, title, desc, delay, bgGradient, accentColor }:MissionCardProps) {
   const accentColors = {
     green: {
       border: 'border-green-200',
@@ -143,6 +151,22 @@ function MissionCard({ icon, title, desc, delay, bgGradient, accentColor }) {
       hoverShadow: 'group-hover:shadow-orange-400/50',
       ring: 'border-orange-200/30',
       checkBg: 'from-orange-500 to-red-500'
+    },
+    blue: {
+      border: 'border-blue-200',
+      iconBg: 'from-blue-400 to-indigo-500',
+      iconShadow: 'shadow-blue-300/50',
+      hoverShadow: 'group-hover:shadow-blue-400/50',
+      ring: 'border-blue-200/30',
+      checkBg: 'from-blue-500 to-indigo-500'
+    },
+    purple: {
+      border: 'border-purple-200',
+      iconBg: 'from-purple-400 to-fuchsia-500',
+      iconShadow: 'shadow-purple-300/50',
+      hoverShadow: 'group-hover:shadow-purple-400/50',
+      ring: 'border-purple-200/30',
+      checkBg: 'from-purple-500 to-fuchsia-500'
     }
   };
 
