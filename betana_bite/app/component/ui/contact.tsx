@@ -66,7 +66,7 @@ export default function Contact() {
             icon="📍" 
             title="Location" 
             subtitle="Nappam, Tezpur, Assam"
-            link={null}
+            link="www.youtube.com"
             delay={0.2}
           />
           <ContactItem 
@@ -250,7 +250,7 @@ function ContactItem({ icon, title, subtitle, link, delay }:ContactItemProps) {
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-600 break-words">
+        <p className="text-gray-600 wrap-break">
           {subtitle}
         </p>
         {link && (
