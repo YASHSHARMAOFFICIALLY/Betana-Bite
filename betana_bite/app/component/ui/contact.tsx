@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-gradient-to-b from-white via-orange-50/30 to-white overflow-hidden">
+    <section id="contact" className="relative py-24 md:py-32 bg-linear-to-b from-white via-orange-50/30 to-white overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-orange-200/10 rounded-full blur-3xl" />
@@ -33,7 +33,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 border border-orange-200 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-orange-100 to-amber-100 border border-orange-200 mb-8"
           >
             <span className="text-2xl">💬</span>
             <span className="text-orange-800 text-sm font-bold uppercase tracking-wider">Let's Connect</span>
@@ -50,7 +50,7 @@ export default function Contact() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute bottom-1 left-0 w-full h-1 bg-gradient-to-r from-orange-400/60 to-transparent origin-left"
+                className="absolute bottom-1 left-0 w-full h-1 bg-linear-to-r from-orange-400/60 to-transparent origin-left"
               />
             </span>
           </h2>
@@ -118,7 +118,7 @@ export default function Contact() {
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
+              className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-12"
             />
           </motion.a>
 
@@ -146,7 +146,7 @@ export default function Contact() {
           className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {/* Wholesale Inquiries */}
-          <div className="p-8 bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl border border-orange-200 shadow-lg">
+          <div className="p-8 bg-linear-to-br from-orange-50 to-amber-50 rounded-3xl border border-orange-200 shadow-lg">
             <div className="text-4xl mb-4">🏪</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Wholesale Inquiries</h3>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -224,8 +224,15 @@ export default function Contact() {
     </section>
   );
 }
-
-function ContactItem({ icon, title, subtitle, link, delay }) {
+interface ContactItemProps {
+  icon: React.ReactNode; 
+  title: string;
+  subtitle: string;
+  link: string;
+  delay: number;
+}
+function ContactItem({ icon, title, subtitle, link, delay }:ContactItemProps) {
+    
   const content = (
     <div className="relative h-full p-8 bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
       {/* Gradient Overlay */}
