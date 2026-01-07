@@ -8,18 +8,18 @@ import { ShoppingCart, Menu, X, User, LogOut } from "lucide-react";
 
 interface NavbarProps {
   setCartOpen: (open: boolean) => void;
-  totalItems: number;
-  user: any; 
-  onLoginClick: () => void;
-  onLogout: () => void;
+  totalItems?: number;
+  user?: any; 
+  onLoginClick?: () => void;
+  onLogout?: () => void;
 }
 
 export default function Navbar({ 
   setCartOpen, 
-  totalItems, 
-  user, 
-  onLoginClick, 
-  onLogout 
+  totalItems=0, 
+  user = null , 
+  onLoginClick = ()=>{}, 
+  onLogout = ()=>{}
 }: NavbarProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function Navbar({
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center shadow-md">
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-linear-to-br from-orange-100 to-orange-200 flex items-center justify-center shadow-md">
                             <span className="font-serif text-base sm:text-lg font-bold text--700">Bb</span>
                         </div>
                         <div className="font-serif text-base sm:text-lg lg:text-xl font-bold text-gray-800">
@@ -69,7 +69,7 @@ export default function Navbar({
                                     onClick={() => setUserMenuOpen(!userMenuOpen)}
                                     className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                                 >
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-sm font-semibold">
+                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-sm font-semibold">
                                         {user.name?.[0]?.toUpperCase() || <User size={16} />}
                                     </div>
                                     <span className="text-sm font-medium text-gray-700 hidden lg:block">
@@ -115,7 +115,7 @@ export default function Navbar({
                
                         <motion.button
                             onClick={() => setCartOpen(true)}
-                            className="ml-2 relative px-4 lg:px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200 flex items-center gap-2"
+                            className="ml-2 relative px-4 lg:px-6 py-2 rounded-full bg-linear-to-r from-orange-500 to-orange-600 text-white font-semibold shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200 flex items-center gap-2"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
